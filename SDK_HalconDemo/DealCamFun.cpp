@@ -138,9 +138,6 @@ void DealCamFun::DealCamCpp(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_
 	HTuple  hv_Area1, hv_Row1, hv_Column1, hv_Area2, hv_Row2;
 	HTuple  hv_Column2, hv_Area_percent, hv_DefectArea;
 
-	//进行图像格式转换
-	//ConvertImageType(ho_Height, &ho_Height, "uint2");
-	//ConvertImageType(ho_Intens, &ho_Intens, "uint2");
 
 	//计算图像的尺寸，Width指图像的宽，Height指图像的高
 	GetImageSize(ho_Height, &hv_Width, &hv_Height);
