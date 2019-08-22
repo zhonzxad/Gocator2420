@@ -161,6 +161,6 @@ public:
 
 	void ValidRegion(HalconCpp::HObject ho_CrackBinImage, HalconCpp::HObject* ho_ValidRecRegion, HTuple hv_HeightCrack);
 
-	void Deal_SS_DJ(HalconCpp::HObject img_Height, HalconCpp::HObject img_Intens);
+	void Deal_SS_DJ(double ZResolution,HalconCpp::HObject img_Height, HalconCpp::HObject img_Intens); 
 };
 

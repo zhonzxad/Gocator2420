@@ -2256,7 +2256,7 @@ void SS_DJ_Measure::ValidRegion(HalconCpp::HObject ho_CrackBinImage, HalconCpp::
 	return;
 }
 
-void SS_DJ_Measure::Deal_SS_DJ(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_Intensity)
+void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Height, HalconCpp::HObject ho_Intensity)
 {
 	// Local iconic variables
 	HalconCpp::HObject  ho_Region, ho_RegionClosing, ho_Regions, ho_Regionselect, ho_ImageMedian;;
