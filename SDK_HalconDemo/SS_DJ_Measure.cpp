@@ -2288,6 +2288,13 @@ void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Hei
 	//ConvertImageType(ho_Height, &ho_Height, "uint2");
 	//ConvertImageType(ho_Intensity, &ho_Intensity, "uint2");
 
+	HalconCpp::HObject  ho_ImageConverted;
+	ConvertImageType(ho_Height, &ho_ImageConverted, "real");
+	ScaleImage(ho_ImageConverted, &ho_Height, 1, 32768);
+
+	ConvertImageType(ho_Intensity, &ho_ImageConverted, "real");
+	ScaleImage(ho_ImageConverted, &ho_Intensity, 257, 0);
+
 	//变量定义----输出变量
 	//样品有无
 	hv_PelletExist = 1;
