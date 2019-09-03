@@ -65,7 +65,6 @@ void DealCamFun::FindCircRegion(HalconCpp::HObject ho_X, HalconCpp::HObject* ho_
 
 void DealCamFun::FindDefect_high(HalconCpp::HObject ho_CircImage, HalconCpp::HObject* ho_Defect_high, HTuple hv_Height)
 {
-
 	// Local iconic variables
 	HalconCpp::HObject  ho_Rectangle, ho_Region, ho_RegionFillUp;
 	HalconCpp::HObject  ho_RegionOpening, ho_ConnectedRegions;
@@ -127,6 +126,8 @@ void DealCamFun::FindDefect_light(HalconCpp::HObject ho_Y, HalconCpp::HObject ho
 
 void DealCamFun::DealCamCpp(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_Intens)
 {
+	startTime = clock();
+
 	// Local iconic variables
 	HalconCpp::HObject  ho_CircRegion, ho_CircImage;
 	HalconCpp::HObject  ho_Defect_high, ho_Defect_light, ho_MistakingRegion;
@@ -136,7 +137,8 @@ void DealCamFun::DealCamCpp(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_
 	HTuple  hv_Width, hv_Height, hv_WindowHandle;
 	HTuple  hv_Number, hv_i, hv_RegionInterArea, hv_Row, hv_Column;
 	HTuple  hv_Area1, hv_Row1, hv_Column1, hv_Area2, hv_Row2;
-	HTuple  hv_Column2, hv_Area_percent, hv_DefectArea;
+	HTuple  hv_Column2, hv_Area_percent;
+	
 
 
 	//数据转换方法
@@ -219,5 +221,9 @@ void DealCamFun::DealCamCpp(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_
 	//fwrite_string (FileHandle_defect, DefectArea+'\t')
 	//fnew_line (FileHandle_defect)
 	//close_file (FileHandle_defect)
+
+	endTime = clock();
+
+	QX_JC_runTime = (double)(endTime - startTime) / CLOCKS_PER_SEC;
 }
 
