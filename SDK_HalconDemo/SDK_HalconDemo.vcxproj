@@ -112,12 +112,14 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Program Files\MVTec\HALCON-18.11-Progress\include;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;D:\Program Files\MVTec\HALCON-12.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -188,7 +190,9 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BasicExcel.hpp" />
     <ClInclude Include="DealCamFun.h" />
+    <ClInclude Include="ExcelFormat.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SDK_HalconDemo.h" />
     <ClInclude Include="SDK_HalconDemoDlg.h" />
@@ -197,7 +201,9 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BasicExcel.cpp" />
     <ClCompile Include="DealCamFun.cpp" />
+    <ClCompile Include="ExcelFormat.cpp" />
     <ClCompile Include="SDK_HalconDemo.cpp" />
     <ClCompile Include="SDK_HalconDemoDlg.cpp" />
     <ClCompile Include="SS_DJ_Measure.cpp" />

@@ -36,6 +36,12 @@
     <ClInclude Include="SS_DJ_Measure.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="BasicExcel.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExcelFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDK_HalconDemo.cpp">
@@ -51,6 +57,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SS_DJ_Measure.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicExcel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExcelFormat.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
