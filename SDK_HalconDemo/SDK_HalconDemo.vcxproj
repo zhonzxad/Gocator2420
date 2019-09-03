@@ -117,14 +117,14 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Program Files\MVTec\HALCON-18.11-Progress\include;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;D:\Program Files\MVTec\HALCON-12.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\yang\Desktop\zhangxuan\GO_SDK\Platform\kApi;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Gocator\GoSdk;C:\Program Files\MVTec\HALCON-18.11-Progress\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64d;D:\Program Files\MVTec\HALCON-12.0\lib\x64-win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>GoSdk.lib;kApi.lib;halconcpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\yang\Desktop\zhangxuan\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GoSdk.lib;kApi.lib;halcon.lib;halconcpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -172,11 +172,16 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\yang\Desktop\zhangxuan\GO_SDK\Platform\kApi;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Gocator\GoSdk;C:\Program Files\MVTec\HALCON-18.11-Progress\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <SupportJustMyCode>true</SupportJustMyCode>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>GoSdk.lib;kApi.lib;halcon.lib;halconcpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\yang\Desktop\zhangxuan\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
