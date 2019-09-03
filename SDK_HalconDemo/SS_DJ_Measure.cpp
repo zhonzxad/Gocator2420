@@ -5,6 +5,7 @@
 #include <HALCONCpp/HDevThread.h>
 #include "resource.h"
 #include "SDK_HalconDemoDlg.h"
+#include <ctime>
 
 extern CSDKHalconDemoDlg* mg_dlg;
 
@@ -2256,15 +2257,17 @@ void SS_DJ_Measure::ValidRegion(HalconCpp::HObject ho_CrackBinImage, HalconCpp::
 	return;
 }
 
-void SS_DJ_Measure::Deal_SS_DJ(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_Intensity)
+void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Height, HalconCpp::HObject ho_Intensity)
 {
+	startTime = clock();
+
 	// Local iconic variables
 	HalconCpp::HObject  ho_Region, ho_RegionClosing, ho_Regions, ho_Regionselect, ho_ImageMedian;;
 	HalconCpp::HObject  ho_HeightMedian, ho_Cross;
 
 	// Local control variables
 	HTuple  hv_PelletExist, hv_ChamWidthL, hv_ChamWidthR;
-	HTuple  hv_ChamPhi_L, hv_ChamPhi_R, hv_PelletLength, hv_PixelSize;
+	HTuple  hv_PelletLength, hv_PixelSize;
 	HTuple  hv_RegionMax, hv_RegionMin, hv_WindowHandle, hv_ImWidth;
 	HTuple  hv_ImHeight, hv_Rg_area, hv_region_number, hv_RtCenterCol;
 	HTuple  hv_SmallRtWidth, hv_ColEdge1, hv_ColEdge2, hv_ColEdge3;
@@ -2287,6 +2290,13 @@ void SS_DJ_Measure::Deal_SS_DJ(HalconCpp::HObject ho_Height, HalconCpp::HObject 
 	//进行图像格式转换
 	//ConvertImageType(ho_Height, &ho_Height, "uint2");
 	//ConvertImageType(ho_Intensity, &ho_Intensity, "uint2");
+
+	HalconCpp::HObject  ho_ImageConverted;
+	ConvertImageType(ho_Height, &ho_ImageConverted, "real");
+	ScaleImage(ho_ImageConverted, &ho_Height, 1, 32768);
+
+	ConvertImageType(ho_Intensity, &ho_ImageConverted, "real");
+	ScaleImage(ho_ImageConverted, &ho_Intensity, 257, 0);
 
 	//变量定义----输出变量
 	//样品有无
@@ -2470,6 +2480,10 @@ void SS_DJ_Measure::Deal_SS_DJ(HalconCpp::HObject ho_Height, HalconCpp::HObject 
 		break;
 	
 	}
+
+	endTime = clock();
+
+	DJ_JC_runTime = (double)(endTime - startTime) / CLOCKS_PER_SEC;
 
 	//将当前文件夹中各样品对应尺寸数据整合在一起，便于重复性计算
 	//ChamWidthL_all[m2] := ChamWidthL
