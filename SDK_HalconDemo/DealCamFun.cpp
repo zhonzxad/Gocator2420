@@ -126,6 +126,11 @@ void DealCamFun::FindDefect_light(HalconCpp::HObject ho_Y, HalconCpp::HObject ho
 
 void DealCamFun::DealCamCpp(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_Intens)
 {
+	clock_t endTime, startTime;
+	HTuple  hv_DefectArea;  //缺陷占比量
+	clock_t QX_JC_runTime;	//缺陷程序运行时间
+
+	startTime = endTime = 0;
 	startTime = clock();
 
 	// Local iconic variables
@@ -222,8 +227,12 @@ void DealCamFun::DealCamCpp(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_
 	//fnew_line (FileHandle_defect)
 	//close_file (FileHandle_defect)
 
-	endTime = clock();
 
+
+	endTime = clock();
 	QX_JC_runTime = endTime - startTime;
+
+	mg_dlg->hv_DefectArea_Back = hv_DefectArea.D();
+	mg_dlg->QX_JC_runTime_Back = QX_JC_runTime;
 }
 

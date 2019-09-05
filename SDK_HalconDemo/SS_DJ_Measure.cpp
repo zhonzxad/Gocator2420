@@ -2259,9 +2259,34 @@ void SS_DJ_Measure::ValidRegion(HalconCpp::HObject ho_CrackBinImage, HalconCpp::
 
 void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Height, HalconCpp::HObject ho_Intensity)
 {
+	clock_t endTime, startTime;
+	startTime = endTime = 0;
 	startTime = clock();
 
-	
+	HTuple  hv_ChamPhi_L, hv_ChamPhi_R;		//左右倒角角度
+	HTuple  hv_PelletLength;	//样品长度
+	clock_t DJ_JC_runTime;	//倒角检测时间
+	HTuple  hv_ChamWidthL, hv_ChamWidthR;	//左右倒角宽度
+
+	// Local iconic variables
+	HalconCpp::HObject  ho_Region, ho_RegionClosing, ho_Regions, ho_Regionselect, ho_ImageMedian;;
+	HalconCpp::HObject  ho_HeightMedian, ho_Cross;
+
+	// Local control variables
+	HTuple  hv_PelletExist;
+	HTuple  hv_PixelSize;
+	HTuple  hv_RegionMax, hv_RegionMin, hv_WindowHandle, hv_ImWidth;
+	HTuple  hv_ImHeight, hv_Rg_area, hv_region_number, hv_RtCenterCol;
+	HTuple  hv_SmallRtWidth, hv_ColEdge1, hv_ColEdge2, hv_ColEdge3;
+	HTuple  hv_ColEdge4, hv_RowAll, hv_RtCenterRow, hv_RtWidth;
+	HTuple  hv_W1, hv_W2, hv_L1, hv_L2, hv_NewL2, hv_NewW1;
+	HTuple  hv_NewW2, hv_IndexError, hv_Dist, hv_MeanV, hv_IndexError_M;
+	HTuple  hv_ChamL, hv_IndexError_ChamL, hv_ChamR, hv_IndexError_ChamR;
+	HTuple  hv_PelletL, hv_IndexError_PelletLg, hv_IndexErrorUnion1;
+	HTuple  hv_IndexErrorUnion2, hv_ROI_width, hv_Column_re_T;
+	HTuple  hv_Col_e1, hv_Col_e2, hv_Col_e3, hv_Col_e4, hv_Width_ChamL;
+	HTuple  hv_Width_ChamR, hv_Col_ChamL, hv_Col_ChamR, hv_Width_Cham;
+	HTuple  hv_Col_Cham, hv_HtWidth, hv_HtHeight, hv_ChamPhi;
 
 	//思想：用亮度图提取样品倒角，倒角边缘亮度突变明显，用一阶导数提取；
 	//对V2版本内容进行补充，增加测量倒角角度部分，思想：根据句柄提取的灰度值拟合直线，计算直线斜率
@@ -2466,6 +2491,13 @@ void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Hei
 	endTime = clock();
 
 	DJ_JC_runTime = endTime - startTime;
+
+	mg_dlg->hv_ChamPhi_L_Back = hv_ChamPhi_L;
+	mg_dlg->hv_ChamPhi_R_Back = hv_ChamPhi_R;
+	mg_dlg->hv_PelletLength_Back = hv_PelletLength;
+	mg_dlg->DJ_JC_runTime_Back = DJ_JC_runTime;
+	mg_dlg->hv_ChamWidthL_Back = hv_ChamWidthL;
+	mg_dlg->hv_ChamWidthR_Back = hv_ChamWidthR;
 
 	//将当前文件夹中各样品对应尺寸数据整合在一起，便于重复性计算
 	//ChamWidthL_all[m2] := ChamWidthL

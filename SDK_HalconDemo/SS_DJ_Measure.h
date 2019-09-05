@@ -18,6 +18,9 @@ protected:
 	virtual BOOL OnInitDialog();
 
 public:
+	
+
+public:
 	void calculate_lines_gauss_parameters(HTuple hv_MaxLineWidth, HTuple hv_Contrast,
 		HTuple* hv_Sigma, HTuple* hv_Low, HTuple* hv_High);
 
@@ -163,29 +166,7 @@ public:
 
 	void Deal_SS_DJ(double ZResolution,HalconCpp::HObject img_Height, HalconCpp::HObject img_Intens);
 
-public:
-	HTuple  hv_ChamPhi_L, hv_ChamPhi_R;		//×óÓÒµ¹½Ç¿í¶È
-	clock_t endTime, startTime;
-	clock_t DJ_JC_runTime;	//µ¹½Ç¼ì²âÊ±¼ä
 
-	// Local iconic variables
-	HalconCpp::HObject  ho_Region, ho_RegionClosing, ho_Regions, ho_Regionselect, ho_ImageMedian;;
-	HalconCpp::HObject  ho_HeightMedian, ho_Cross;
 
-	// Local control variables
-	HTuple  hv_PelletExist, hv_ChamWidthL, hv_ChamWidthR;
-	HTuple  hv_PelletLength, hv_PixelSize;
-	HTuple  hv_RegionMax, hv_RegionMin, hv_WindowHandle, hv_ImWidth;
-	HTuple  hv_ImHeight, hv_Rg_area, hv_region_number, hv_RtCenterCol;
-	HTuple  hv_SmallRtWidth, hv_ColEdge1, hv_ColEdge2, hv_ColEdge3;
-	HTuple  hv_ColEdge4, hv_RowAll, hv_RtCenterRow, hv_RtWidth;
-	HTuple  hv_W1, hv_W2, hv_L1, hv_L2, hv_NewL2, hv_NewW1;
-	HTuple  hv_NewW2, hv_IndexError, hv_Dist, hv_MeanV, hv_IndexError_M;
-	HTuple  hv_ChamL, hv_IndexError_ChamL, hv_ChamR, hv_IndexError_ChamR;
-	HTuple  hv_PelletL, hv_IndexError_PelletLg, hv_IndexErrorUnion1;
-	HTuple  hv_IndexErrorUnion2, hv_ROI_width, hv_Column_re_T;
-	HTuple  hv_Col_e1, hv_Col_e2, hv_Col_e3, hv_Col_e4, hv_Width_ChamL;
-	HTuple  hv_Width_ChamR, hv_Col_ChamL, hv_Col_ChamR, hv_Width_Cham;
-	HTuple  hv_Col_Cham, hv_HtWidth, hv_HtHeight, hv_ChamPhi;
 };
 
