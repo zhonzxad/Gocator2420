@@ -117,11 +117,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Program Files\MVTec\HALCON-18.11-Progress\include;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;D:\Program Files\MVTec\HALCON-12.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;C:\Program Files\MVTec\HALCON-19.05-Progress\include;C:\Program Files\MVTec\HALCON-18.11-Progress\include;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;D:\Program Files\MVTec\HALCON-12.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64d;D:\Program Files\MVTec\HALCON-12.0\lib\x64-win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-19.05-Progress\lib\x64-win64;E:\ZhangXuan\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;D:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64;D:\Gocator\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64d;D:\Program Files\MVTec\HALCON-12.0\lib\x64-win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>GoSdk.lib;kApi.lib;halconcpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
