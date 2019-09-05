@@ -191,7 +191,7 @@ void DealCamFun::DealCamCpp(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_
 	}
 
 	Difference(ho_Defect_high, ho_MistakingRegion, &ho_Defect);
-	//计算缺陷面积占比
+	//计算缺陷面积占比  hv_DefectArea
 	AreaCenter(ho_Defect, &hv_Area1, &hv_Row1, &hv_Column1);
 	AreaCenter(ho_CircRegion, &hv_Area2, &hv_Row2, &hv_Column2);
 	hv_Area_percent = 0;
@@ -224,6 +224,6 @@ void DealCamFun::DealCamCpp(HalconCpp::HObject ho_Height, HalconCpp::HObject ho_
 
 	endTime = clock();
 
-	QX_JC_runTime = (double)(endTime - startTime) / CLOCKS_PER_SEC;
+	QX_JC_runTime = endTime - startTime;
 }
 

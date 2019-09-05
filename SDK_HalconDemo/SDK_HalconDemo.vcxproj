@@ -81,8 +81,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\yang\Desktop\zhangxuan\GO_SDK\Platform\kApi;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Gocator\GoSdk;C:\Program Files\MVTec\HALCON-18.11-Progress\include;$(IncludePath)</IncludePath>
-    <ReferencePath>C:\Program Files\MVTec\HALCON-18.11-Progress\bin\x64-win64;C:\Users\yang\Desktop\zhangxuan\GO_SDK\bin\win64d;C:\Users\yang\Desktop\zhangxuan\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;$(ReferencePath)</ReferencePath>
+    <IncludePath>C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;C:\Program Files\MVTec\HALCON-19.05-Progress\include;C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Platform\kApi;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Gocator\GoSdk;C:\Program Files\MVTec\HALCON-18.11-Progress\include;$(IncludePath)</IncludePath>
+    <ReferencePath>C:\Program Files\MVTec\HALCON-19.05-Progress\bin\x64-win64;C:\Program Files\MVTec\HALCON-19.05-Progress\lib\x64-win64;C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\bin\win64d;C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-18.11-Progress\bin\x64-win64;C:\Users\yang\Desktop\zhangxuan\GO_SDK\bin\win64d;C:\Users\yang\Desktop\zhangxuan\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;$(ReferencePath)</ReferencePath>
     <LibraryPath>C:\Users\yang\Desktop\zhangxuan\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,16 +124,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\yang\Desktop\zhangxuan\GO_SDK\Platform\kApi;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Gocator\GoSdk;C:\Program Files\MVTec\HALCON-18.11-Progress\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Program Files\MVTec\HALCON-18.11-Progress\include;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Platform\kApi;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Gocator\GoSdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Platform\kApi;C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\Gocator\GoSdk;C:\Program Files\MVTec\HALCON-19.05-Progress\include;C:\Program Files\MVTec\HALCON-18.11-Progress\include;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Platform\kApi;C:\Users\yang\Desktop\zhangxuan\GO_SDK\Gocator\GoSdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BufferSecurityCheck>false</BufferSecurityCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\yang\Desktop\zhangxuan\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\bin\win64d;C:\Program Files\MVTec\HALCON-19.05-Progress\lib\x64-win64;C:\LMI\14400-5.2.18.11_SOFTWARE_GO_SDK\GO_SDK\lib\win64d;C:\Users\yang\Desktop\zhangxuan\GO_SDK\lib\win64d;C:\Program Files\MVTec\HALCON-18.11-Progress\lib\x64-win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>GoSdk.lib;kApi.lib;halcon.lib;halconcpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>

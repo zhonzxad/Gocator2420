@@ -2261,25 +2261,7 @@ void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Hei
 {
 	startTime = clock();
 
-	// Local iconic variables
-	HalconCpp::HObject  ho_Region, ho_RegionClosing, ho_Regions, ho_Regionselect, ho_ImageMedian;;
-	HalconCpp::HObject  ho_HeightMedian, ho_Cross;
-
-	// Local control variables
-	HTuple  hv_PelletExist, hv_ChamWidthL, hv_ChamWidthR;
-	HTuple  hv_PelletLength, hv_PixelSize;
-	HTuple  hv_RegionMax, hv_RegionMin, hv_WindowHandle, hv_ImWidth;
-	HTuple  hv_ImHeight, hv_Rg_area, hv_region_number, hv_RtCenterCol;
-	HTuple  hv_SmallRtWidth, hv_ColEdge1, hv_ColEdge2, hv_ColEdge3;
-	HTuple  hv_ColEdge4, hv_RowAll, hv_RtCenterRow, hv_RtWidth;
-	HTuple  hv_W1, hv_W2, hv_L1, hv_L2, hv_NewL2, hv_NewW1;
-	HTuple  hv_NewW2, hv_IndexError, hv_Dist, hv_MeanV, hv_IndexError_M;
-	HTuple  hv_ChamL, hv_IndexError_ChamL, hv_ChamR, hv_IndexError_ChamR;
-	HTuple  hv_PelletL, hv_IndexError_PelletLg, hv_IndexErrorUnion1;
-	HTuple  hv_IndexErrorUnion2, hv_ROI_width, hv_Column_re_T;
-	HTuple  hv_Col_e1, hv_Col_e2, hv_Col_e3, hv_Col_e4, hv_Width_ChamL;
-	HTuple  hv_Width_ChamR, hv_Col_ChamL, hv_Col_ChamR, hv_Width_Cham;
-	HTuple  hv_Col_Cham, hv_HtWidth, hv_HtHeight, hv_ChamPhi;
+	
 
 	//思想：用亮度图提取样品倒角，倒角边缘亮度突变明显，用一阶导数提取；
 	//对V2版本内容进行补充，增加测量倒角角度部分，思想：根据句柄提取的灰度值拟合直线，计算直线斜率
@@ -2364,19 +2346,19 @@ void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Hei
 		hv_L2 = hv_ColEdge4 - hv_ColEdge1;
 		//封装算子，根据倒角间距离L1，求众数，剔除异常值，输出 NewL2, NewW1, NewW2
 		TruePoints(hv_L1, hv_L2, hv_W1, hv_W2, &hv_NewL2, &hv_NewW1, &hv_NewW2, &hv_IndexError);
-		//求左侧倒角宽度 ChamWidthL
+		//求左侧倒角宽度 hv_ChamWidthL
 		hv_Dist = hv_NewW1;
 		MeanValue(hv_Dist, &hv_MeanV, &hv_IndexError_M);
 		hv_ChamL = hv_MeanV;
 		hv_ChamWidthL = hv_ChamL * hv_PixelSize;
 		hv_IndexError_ChamL = hv_IndexError_M;
-		//求右侧倒角宽度 ChamWidthR
+		//求右侧倒角宽度 hv_ChamWidthR
 		hv_Dist = hv_NewW2;
 		MeanValue(hv_Dist, &hv_MeanV, &hv_IndexError_M);
 		hv_ChamR = hv_MeanV;
 		hv_ChamWidthR = hv_ChamR * hv_PixelSize;
 		hv_IndexError_ChamR = hv_IndexError_M;
-		//求样品长度   PelletLength
+		//求样品长度   hv_PelletLength
 		hv_Dist = hv_NewL2;
 		MeanValue(hv_Dist, &hv_MeanV, &hv_IndexError_M);
 		hv_PelletL = hv_MeanV;
@@ -2410,7 +2392,7 @@ void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Hei
 		hv_Col_ChamR = (hv_Col_e4 + hv_Col_e3) / 2;
 
 		//***********倒角角度计算*******************
-		//计算左倒角角度
+		//计算左倒角角度 hv_ChamPhi_L
 		//倒角宽度
 		hv_Width_Cham = hv_Width_ChamL;
 		//生成测量句柄中心点列坐标
@@ -2425,7 +2407,7 @@ void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Hei
 			hv_HtWidth, hv_PixelSize, &hv_ChamPhi);
 		hv_ChamPhi_L = hv_ChamPhi;
 
-		//计算右倒角角度
+		//计算右倒角角度  hv_ChamPhi_R
 		//倒角宽度
 		hv_Width_Cham = hv_Width_ChamR;
 		//生成测量句柄中心点列坐标
@@ -2483,7 +2465,7 @@ void SS_DJ_Measure::Deal_SS_DJ(double ZResolution_Temp,HalconCpp::HObject ho_Hei
 
 	endTime = clock();
 
-	DJ_JC_runTime = (double)(endTime - startTime) / CLOCKS_PER_SEC;
+	DJ_JC_runTime = endTime - startTime;
 
 	//将当前文件夹中各样品对应尺寸数据整合在一起，便于重复性计算
 	//ChamWidthL_all[m2] := ChamWidthL
