@@ -41,7 +41,7 @@ void DealCamFun::FindCircRegion(HalconCpp::HObject ho_X, HalconCpp::HObject* ho_
 
 	Threshold(ho_X, &ho_Region, 1000, 100000);
 	//对阈值后的区域做填充操作，得到封闭周面区域。（原因：周面会出现丢帧现象）
-	FillUpShape(ho_Region, &ho_RegionFillUp, "area", 1, 10000);
+	FillUpShape(ho_Region, &ho_RegionFillUp, "area", 1, 10000);   
 	//开运算的作用是除去样品以外的区域
 	OpeningCircle(ho_RegionFillUp, &ho_RegionOpening, 3.5);
 	//求得周面所在外接矩形区域
@@ -62,7 +62,7 @@ void DealCamFun::FindCircRegion(HalconCpp::HObject ho_X, HalconCpp::HObject* ho_
 	//difference (RegionTrans, CircRegion, RegionDifference)
 	return;
 }
-
+ 
 void DealCamFun::FindDefect_high(HalconCpp::HObject ho_CircImage, HalconCpp::HObject* ho_Defect_high, HTuple hv_Height)
 {
 	// Local iconic variables
