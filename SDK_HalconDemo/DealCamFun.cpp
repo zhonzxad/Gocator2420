@@ -8,6 +8,8 @@
 
 using namespace HalconCpp;
 
+#pragma warning(disable:4244)
+
 //HTuple  hv_Width, hv_Height;
 //HTuple  hv_WindowHandle;
 //CSDKHalconDemoDlg m_mainDlg;

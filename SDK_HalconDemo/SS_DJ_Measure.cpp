@@ -7,6 +7,8 @@
 #include "SDK_HalconDemoDlg.h"
 #include <ctime>
 
+#pragma warning(disable:4244)
+
 extern CSDKHalconDemoDlg* mg_dlg;
 
 BOOL SS_DJ_Measure::OnInitDialog()
