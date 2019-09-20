@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <chrono>
 
-
 using namespace HalconCpp;
 
 class SS_DJ_Measure : public CDialogEx //public CDialogEx
@@ -164,6 +163,8 @@ public:
 	void Deal_SS_DJ(double ZResolution,HalconCpp::HObject img_Height, HalconCpp::HObject img_Intens);
 
 public:
+	//CSDKHalconDemoDlg* mg_dlg = NULL;
+
 	HTuple  hv_ChamPhi_L, hv_ChamPhi_R;		//×óÓÒµ¹½Ç¿í¶È
 	clock_t endTime, startTime;
 	clock_t DJ_JC_runTime;	//µ¹½Ç¼ì²âÊ±¼ä
