@@ -15,6 +15,7 @@ using namespace HalconCpp;
 //CSDKHalconDemoDlg m_mainDlg;
 extern CSDKHalconDemoDlg* mg_dlg;
 
+
 BOOL DealCamFun::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();

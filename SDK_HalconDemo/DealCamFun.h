@@ -7,7 +7,6 @@
 #include <ctime>
 #include <chrono>
 
-
 using namespace HalconCpp;
 
 class DealCamFun : public CDialogEx
@@ -27,6 +26,8 @@ public:
 	void DealCamCpp(HalconCpp::HObject ho_Heigh, HalconCpp::HObject ho_Intens);
 
 public:
+	//CSDKHalconDemoDlg* mg_dlg = NULL;
+
 	HTuple  hv_DefectArea;  //缺陷占比量
 	clock_t endTime, startTime;
 	clock_t QX_JC_runTime;	//缺陷程序运行时间

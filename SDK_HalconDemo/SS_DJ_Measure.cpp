@@ -11,6 +11,7 @@
 
 extern CSDKHalconDemoDlg* mg_dlg;
 
+
 BOOL SS_DJ_Measure::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
